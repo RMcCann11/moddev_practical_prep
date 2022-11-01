@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   myVariable: string = 'The force is with me!';
+  updateMyValue() {
+    this.myVariable = 'Now the force is even stronger!';
+    }
 
 }
