@@ -15,10 +15,18 @@ export class FilmsPage implements OnInit {
   constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
+    // this.films = this.http.get('https://swapi.dev/api/films');
+    // this.films.subscribe(data => {
+    //   console.log('my data: ', data);
+    // });
+    //NOTE THIS WAS CODE FROM SLIDE 25 TO DISPLAY DATA IN THE CONSOLE
     this.films = this.http.get('https://swapi.dev/api/films');
-    this.films.subscribe(data => {
-      console.log('my data: ', data);
-    });
+  }
+
+  openDetails(film) {
+    let split = film.url.split('/');
+    let filmId = split[split.length-2];
+    this.router.navigateByUrl(`/tabs/films/${filmId}`);
   }
 
 }
