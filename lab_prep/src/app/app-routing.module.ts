@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: 'planet-details',
     loadChildren: () => import('./pages/planet-details/planet-details.module').then( m => m.PlanetDetailsPageModule)
+  },
+  {
+    path: 'person-details',
+    loadChildren: () => import('./pages/person-details/person-details.module').then( m => m.PersonDetailsPageModule)
   }
   //As per slide 12, we're setting the entry point to the TabsPage component
 ];
